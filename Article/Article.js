@@ -102,7 +102,7 @@ const data = [
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
+  
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
@@ -112,3 +112,22 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+//step 1: create function that will create component
+function createArticle(data){
+  //step 2: define new elements using createElement [DONE]
+  //step 3: setup structure (everything appends to article (except article of course))
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+    article.append(articleTitle);
+  const articleDateP = document.createElement('p');
+    article.append(articleDateP);
+  const articleFirstParagraph = document.createElement('p');
+    article.append(articleFirstParagraph);
+  const articleSecondParagraph = document.createElement('p');
+    article.append(articleSecondParagraph);
+  const articleThirdParagraph = document.createElement('p');
+    article.append(articleThirdParagraph);
+  const articleSpan = document.createElement('span');
+    article.append(articleSpan);
+}
