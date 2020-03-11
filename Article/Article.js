@@ -118,20 +118,35 @@ function createArticle(data){
   //step 2: define new elements using createElement [DONE]
   //step 3: setup structure (everything appends to article (except article of course)) [DONE]
   //step 4: add classes to elements: class article on article, class date on articleDateP, class expandButton on span [DONE]
+  //step 5: setup textContent [DONE]
   const article = document.createElement('div');
-    article.classList.add('article');
+  article.classList.add('article');
+
   const articleTitle = document.createElement('h2');
-    article.append(articleTitle);
+  article.append(articleTitle);
+  articleTitle.textContent = data.title;
+
   const articleDateP = document.createElement('p');
-    article.append(articleDateP);
-    article.classList.add('date');
+  article.append(articleDateP);
+  article.classList.add('date');
+  articleDateP.textContent = data.date;
+
   const articleFirstParagraph = document.createElement('p');
-    article.append(articleFirstParagraph);
+  article.append(articleFirstParagraph);
+  articleFirstParagraph.textContent = data.firstParagraph;
+
   const articleSecondParagraph = document.createElement('p');
-    article.append(articleSecondParagraph);
+  article.append(articleSecondParagraph);
+  articleSecondParagraph.textContent = data.secondParagraph;
+
   const articleThirdParagraph = document.createElement('p');
-    article.append(articleThirdParagraph);
+  article.append(articleThirdParagraph);
+  articleThirdParagraph.textContent = data.thirdParagraph;
+
   const articleSpan = document.createElement('span');
-    article.append(articleSpan);
-    article.classList.add('expandButton');
+  article.append(articleSpan);
+  article.classList.add('expandButton');
+  articleSpan.textContent = '\u25bc';
+
+  return article
 }
