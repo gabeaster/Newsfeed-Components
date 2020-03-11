@@ -161,15 +161,12 @@ function createArticle(data){
 const articles = document.querySelector('.articles')
 // articles.appendChild(createArticle('testing'));
 
-let newArticleArray = []
-data.map((item) => {
-  newArticleArray.push(item);
+newArticleArray = data.map(element => element);
+
+newArticleArray.forEach(article => {articles.append(article)
 });
 
-newArticleArray.forEach(article => {articles.appendChild(article)
-});
 
-console.log(newArticleArray);
 
 
 
