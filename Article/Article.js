@@ -116,12 +116,15 @@ const data = [
 //step 1: create function that will create component
 function createArticle(data){
   //step 2: define new elements using createElement [DONE]
-  //step 3: setup structure (everything appends to article (except article of course))
+  //step 3: setup structure (everything appends to article (except article of course)) [DONE]
+  //step 4: add classes to elements: class article on article, class date on articleDateP, class expandButton on span [DONE]
   const article = document.createElement('div');
+    article.classList.add('article');
   const articleTitle = document.createElement('h2');
     article.append(articleTitle);
   const articleDateP = document.createElement('p');
     article.append(articleDateP);
+    article.classList.add('date');
   const articleFirstParagraph = document.createElement('p');
     article.append(articleFirstParagraph);
   const articleSecondParagraph = document.createElement('p');
@@ -130,4 +133,5 @@ function createArticle(data){
     article.append(articleThirdParagraph);
   const articleSpan = document.createElement('span');
     article.append(articleSpan);
+    article.classList.add('expandButton');
 }
