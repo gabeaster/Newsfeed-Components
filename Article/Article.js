@@ -103,9 +103,9 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
   
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  [done]Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
+  [done]Step 3: return the entire component.
 
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
@@ -115,10 +115,10 @@ const data = [
 
 //step 1: create function that will create component
 function createArticle(data){
-  //step 2: define new elements using createElement [DONE]
-  //step 3: setup structure (everything appends to article (except article of course)) [DONE]
-  //step 4: add classes to elements: class article on article, class date on articleDateP, class expandButton on span [DONE]
-  //step 5: setup textContent [DONE]
+  //define new elements using createElement [DONE]
+  //setup structure (everything appends to article (except article of course)) [DONE]
+  //add classes to elements: class article on article, class date on articleDateP, class expandButton on span [DONE]
+  //setup textContent [DONE]
   const article = document.createElement('div');
   article.classList.add('article');
 
@@ -152,7 +152,26 @@ function createArticle(data){
   articleSpan.addEventListener('click', (event) => {
     article.classList.toggle('article-open');
   })
-  
-
+  //Step 3: return the entire component.
   return article
 }
+
+//Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+//Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+const articles = document.querySelector('.articles')
+
+let newArticleArray = data.map((item) => {
+  //return new array with new item, after being manipulated by the callback function
+  let newArticle = createArticle(item);
+  return newArticle;
+});
+
+newArticleArray.forEach(article => {articles.appendChild(article)
+});
+
+// console.log(newArticleArray);
+
+
+
+
+
