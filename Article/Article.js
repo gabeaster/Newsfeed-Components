@@ -127,20 +127,20 @@ function createArticle(data){
   articleTitle.textContent = data.title;
 
   const articleDateP = document.createElement('p');
-  article.append(articleDateP);
+  articleTitle.append(articleDateP);
   article.classList.add('date');
   articleDateP.textContent = data.date;
 
   const articleFirstParagraph = document.createElement('p');
-  article.append(articleFirstParagraph);
+  articleDateP.append(articleFirstParagraph);
   articleFirstParagraph.textContent = data.firstParagraph;
 
   const articleSecondParagraph = document.createElement('p');
-  article.append(articleSecondParagraph);
+  articleFirstParagraph.append(articleSecondParagraph);
   articleSecondParagraph.textContent = data.secondParagraph;
 
   const articleThirdParagraph = document.createElement('p');
-  article.append(articleThirdParagraph);
+  articleSecondParagraph.append(articleThirdParagraph);
   articleThirdParagraph.textContent = data.thirdParagraph;
 
   const articleSpan = document.createElement('span');
@@ -159,17 +159,17 @@ function createArticle(data){
 //Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 //Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 const articles = document.querySelector('.articles')
+// articles.appendChild(createArticle('testing'));
 
-let newArticleArray = data.map((item) => {
-  //return new array with new item, after being manipulated by the callback function
-  let newArticle = createArticle(item);
-  return newArticle;
+let newArticleArray = []
+data.map((item) => {
+  newArticleArray.push(item);
 });
 
 newArticleArray.forEach(article => {articles.appendChild(article)
 });
 
-// console.log(newArticleArray);
+console.log(newArticleArray);
 
 
 
